@@ -44,7 +44,7 @@ class Passport
   end
 
   def valid_hcl
-    details['hcl'].match? /#[0-9a-f]{6}/
+    details['hcl'].match? /^#[0-9a-f]{6}$/
   end
 
   def valid_ecl
