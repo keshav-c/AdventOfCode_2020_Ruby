@@ -23,13 +23,9 @@ class BoardingPass
   end
 
   def text_to_binary_array(text_representation, char_0:, char_1:)
-    text_representation.chars.reverse.map do |c|
-      if c == char_0
-        0
-      elsif c == char_1
-        1
-      end
-    end
+    text_representation.gsub!(char_0, '0')
+    text_representation.gsub!(char_1, '1')
+    text_representation.chars.reverse.map(&:to_i)
   end
 end
 
