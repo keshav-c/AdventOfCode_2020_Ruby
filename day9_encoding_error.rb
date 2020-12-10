@@ -28,6 +28,8 @@ class XMASDecoder
     return subarray.max + subarray.min
   end
 
+  private
+
   def valid_sample? sample, preamble
     preamble.combination(2).any? do |preamble_sample1, preamble_sample2|
       preamble_sample1 + preamble_sample2 == sample
